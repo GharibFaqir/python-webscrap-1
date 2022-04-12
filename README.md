@@ -8,7 +8,7 @@
 
 <li> Pip install requests
 <li> Pip install bs4 (beautiful soup)
-<li>
+<li> Checking 
 <li>
 <li>
 <li>
