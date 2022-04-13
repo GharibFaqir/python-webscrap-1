@@ -1,0 +1,1 @@
+# Scrapping Website: https://www.whitehouse.gov/briefing-room/statements-releases/
