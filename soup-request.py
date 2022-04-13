@@ -13,3 +13,10 @@ result = requests.get("https://www.google.com/")
 # If website is accessible
 # than response = 200 OK
 print(result.status_code)
+
+# Other HTTPS Status Codes:
+# https://en.wikipedia.org/wiki/List_of_HTTP_status_codes
+
+# Access header of webpage, to make sure
+# we have accessed the correct website
+print(result.headers)
