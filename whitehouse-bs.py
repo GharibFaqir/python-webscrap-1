@@ -7,26 +7,16 @@ from bs4 import BeautifulSoup
 
 webpage = requests.get(
     "https://www.whitehouse.gov/briefing-room/statements-releases/")
-print("1. Website Response: ")
-print(webpage.status_code)
-print()
 
 src = webpage.content
 soup = BeautifulSoup(src)
-links = soup.find_all("a")
 
-print("2. Briefings: ")
-for bs in links:
-    if "Briefing" in bs.text:
-        print(bs)
-        print(bs.attrs['href'])
+urls = []
+for h2_tag in soup.find_all("h2"):
+    a_tag = h2_tag.find('a')
+    if a_tag == None:
+        urls.append("Empty")
+        continue
+    urls.append(a_tag.attrs['href'])
 
-print()
-
-print("3. Statements: ")
-for bs in links:
-    if "Statement" in bs.text:
-        print(bs)
-        print(bs.attrs['href'])
-
-print()
+print(urls)
